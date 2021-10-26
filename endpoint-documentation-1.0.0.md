@@ -9,7 +9,7 @@ not already exist. Each User can only have one Account.
 
 **Method** : `POST`
 
-**Auth required** : YES
+**Auth required** : Yes
 
 | header key | header value | description |
 |------------|--------------|-------------|
@@ -19,6 +19,8 @@ not already exist. Each User can only have one Account.
 
 ## Request
 
+**type: body**
+
 ```json
 {
     "name": "Jane",
@@ -27,7 +29,7 @@ not already exist. Each User can only have one Account.
 }
 ```
 
-**Request Description**
+**Request Fields Description**
 
 | key | value | description |
 |------------|--------------|-------------|
@@ -35,7 +37,7 @@ not already exist. Each User can only have one Account.
 | lastname  |  Doe | user lastname |
 | cod_tr_acme  |  787-aeq11 | user code in acme system |
 
-**Request Headers**
+**Request Headers Description**
 
 | header key | header value | description |
 |------------|--------------|-------------|
@@ -56,14 +58,13 @@ not already exist. Each User can only have one Account.
 }
 ```
 
-**Response Description**
-
+**Response Fields Description**
 
 | key | value | description |
 |------------|--------------|-------------|
 | id  |  123 | id of created person  |
 
-**Response Headers**
+**Response Headers Description**
 
 | header key | header value | description |
 |------------|--------------|-------------|
@@ -77,15 +78,19 @@ not already exist. Each User can only have one Account.
   - 500xyz
   - 600xyz
 
-**Response error codes**
+**Response codes**
 
-```json
-{
-    "code": 500403,
-    "message": "permission denied"
-}
-```
+- If response is success, http **status** will be **200** and **code** in body will be **200XYZ**
+- If the invocation ends with error, http status will have the standard status: 401, 403, 500, 502, etc and the code in body will contain an extra numeric values to classify the error:
+  - 400xyz
+  - 401xyz
+  - 403xyz
+  - 500xyz
+  - etcxyz
+
 
 | code | description |
 |------------|-------------|
-| 500403  | user or client is not allowed to execute this endpoint  |
+| 400001  | Sed ut perspiciatis unde omnis iste natus erro  |
+| 400002  | Nemo enim ipsam voluptatem quia voluptas  |
+| 200001  | entity was created  |
