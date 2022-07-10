@@ -71,16 +71,9 @@ not already exist. Each User can only have one Account.
 | x-usil-request-id  |  4512451 | random alphanumeric value which identify this event |
 
 
-- If response is success, http status will be **200**
-- If response has an error in backend, http status will be the standard: 401, 403, 500, 502, etc
-- Related to the http status, will be a code in http body:
-  - 400xyz
-  - 500xyz
-  - 600xyz
-
 **Response codes**
 
-- If response is success, http **status** will be **200** and **code** in body will be **200XYZ**
+- If response is success, http **status** will be **200** and **code** in body will be **200000**. If you are using a 200 range, you could return **200XYZ**
 - If the invocation ends with error, http status will have the standard status: 401, 403, 500, 502, etc and the code in body will contain an extra numeric values to classify the error:
   - 400xyz
   - 401xyz
