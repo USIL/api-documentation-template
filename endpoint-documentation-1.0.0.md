@@ -58,6 +58,13 @@ not already exist. Each User can only have one Account.
 }
 ```
 
+```json
+{
+    "code": 500167,
+    "message": "perspiciatis unde omnis iste natus error"
+}
+```
+
 **Response Fields Description**
 
 | key | value | description |
